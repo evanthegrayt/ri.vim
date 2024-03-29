@@ -48,7 +48,7 @@ class RIVim
                          options[:use_home],
                          options[:use_gems],
                          *options[:extra_doc_dirs]) do |path, type|
-      if File.exists?(path)
+      if File.exist?(path)
         @doc_dirs << path
         store = RDoc::RI::Store.new path, type
         store.load_cache
